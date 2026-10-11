@@ -36,9 +36,10 @@ Edit **`src/config/birthday.ts`**. Every text has `th` and `en` versions.
 
 `public/memories/`:
 
-- `memory-01.jpg`: BBQ night (also used as the welcome portrait)
-- `memory-02.jpg`: silly-face selfie
-- `memory-03.jpg`: dinner photo
+- `portrait.jpg`: BBQ night (welcome-screen portrait)
+- `memory-01.jpg`: long-hair mirror selfie
+- `memory-02.jpg`: soldier photo
+- `memory-03.jpg`: couple selfie
 - `memory-video.mp4`: **not included yet.** Copy your clip here using exactly this name. Until the file exists, the video card is hidden automatically so nothing looks broken.
 
 Video tips: use MP4 (H.264 video and AAC audio, which is what an iPhone records with "Most Compatible"). Keep it under about 20 MB. To compress it:

@@ -102,7 +102,7 @@ export const birthdayConfig: BirthdayConfig = {
   // ✏️ Framed portrait on the welcome screen.
   // objectPosition controls which part of the photo stays visible in the frame.
   portrait: {
-    src: "/memories/memory-01.jpg",
+    src: "/memories/portrait.jpg",
     alt: { th: "รูปแฟนของเรา", en: "My boyfriend" },
     objectPosition: "50% 30%",
   },
@@ -116,34 +116,34 @@ export const birthdayConfig: BirthdayConfig = {
       id: "memory-01",
       type: "photo",
       src: "/memories/memory-01.jpg",
-      width: 1200,
-      height: 1600,
-      alt: { th: "ดินเนอร์หมูกระทะใต้ไฟวิบวับ", en: "BBQ dinner under twinkle lights" },
-      caption: { th: "หมูกระทะใต้ไฟวิบวับ 🍖✨", en: "BBQ night under the twinkle lights 🍖✨" },
+      width: 1108,
+      height: 1477,
+      alt: { th: "เธอตอนผมยาว ถ่ายหน้ากระจก", en: "You with long hair, mirror selfie" },
+      caption: { th: "ไอหมาของเค้าหล่อมาก 🐶", en: "My puppy is sooo handsome 🐶" },
     },
     {
       id: "memory-02",
       type: "photo",
       src: "/memories/memory-02.jpg",
-      width: 1477,
-      height: 1108,
-      alt: { th: "เซลฟี่หน้าตลกของเราสองคน", en: "Our silly-face selfie" },
-      caption: { th: "หน้าตาแบบนี้... ก็ยังรักอยู่ดี 😜", en: "Silly faces, serious love 😜" },
+      width: 1108,
+      height: 1477,
+      alt: { th: "รูปตอนเป็นทหาร", en: "You as a soldier" },
+      caption: { th: "อายุ 22 แล้วขอให้มีความสุขมากๆนะ", en: "22 now — wishing you all the happiness 💚" },
     },
     {
       id: "memory-03",
       type: "photo",
       src: "/memories/memory-03.jpg",
-      width: 900,
-      height: 1600,
-      alt: { th: "เธอตอนกำลังตั้งใจกินข้าว", en: "You, very focused on dinner" },
-      caption: { th: "ตั้งใจกินข้าวแบบนี้ น่ารักที่สุด 🍳", en: "Serious dinner face — my favourite 🍳" },
+      width: 1477,
+      height: 1108,
+      alt: { th: "รูปคู่ของเรา", en: "The two of us" },
+      caption: { th: "เติบโตไปด้วยกัน รักนะค้าบ 🎂✨", en: "Growing up together — love you 🎂✨" },
     },
     {
       id: "memory-video",
       type: "video",
       src: "/memories/memory-video.mp4",
-      poster: "/memories/memory-02.jpg",
+      poster: "/memories/memory-03.jpg",
       alt: { th: "คลิปความทรงจำของเรา", en: "Our memory clip" },
       caption: { th: "คลิปของเราสองคน 🎬", en: "A little clip of us 🎬" },
     },
@@ -195,7 +195,12 @@ export const birthdayConfig: BirthdayConfig = {
   //   บรรทัดที่สอง`,
   // While empty, the letter shows "A little letter is waiting for you ♡".
   birthdayLetter: {
-    th: "",
+    th: `โตขึ้นอีก 1 ปีแล้วนะบี๋ ถึงปีนี้จะไม่ได้ฉลองด้วยกัน แต่ก็มี surprise พิเศษให้น้า
+
+ขอให้เป็นปีที่เติบโต มีความสุขกับสิ่งที่ทำ และอย่าประมาทในการใช้ชีวิต คิดให้เยอะขึ้น ไม่ใช่เด็กๆแล้วนะ
+
+เค้ายังอยู่ตรงนี้คอย support เสมอ รักและเป็นห่วงนะ 🎂✨`,
+    // Left empty on purpose: the English view falls back to the Thai letter above.
     en: "",
   },
 
