@@ -136,3 +136,9 @@ src/
     ui/                     ← Button, Modal, Ticket, Cake, Confetti, TopBar…
 public/memories/            ← photos & video
 ```
+
+---
+
+## 🎁 Template for others
+
+A version with placeholder photos/texts (no personal data) lives in [`template/`](template/), with a Thai step-by-step guide, mockups and a ready-to-paste Claude Code prompt ([`template/PROMPT.md`](template/PROMPT.md)).

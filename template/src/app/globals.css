@@ -1,0 +1,134 @@
+@import "tailwindcss";
+
+/* Colors come from src/config/birthday.ts (set as CSS variables in layout.tsx). */
+@theme inline {
+  --color-cream: var(--lq-cream);
+  --color-blush: var(--lq-pastel);
+  --color-pink: var(--lq-pink);
+  --color-cherry: var(--lq-cherry);
+  --color-rose: var(--lq-rose);
+  --font-sans: var(--font-mali), ui-rounded, system-ui, sans-serif;
+  --font-pixel: var(--font-pixel), ui-monospace, monospace;
+}
+
+:root {
+  --lq-cream: #fff2f4;
+  --lq-pastel: #ffc6d5;
+  --lq-pink: #ff6b8a;
+  --lq-cherry: #d91f46;
+  --lq-rose: #8f1734;
+}
+
+html,
+body {
+  background: var(--lq-cream);
+  color: var(--lq-rose);
+  -webkit-tap-highlight-color: transparent;
+  overscroll-behavior-y: none;
+}
+
+body {
+  min-height: 100dvh;
+  background-image:
+    radial-gradient(circle at 12px 12px, color-mix(in srgb, var(--lq-pastel) 55%, transparent) 2px, transparent 2.5px);
+  background-size: 28px 28px;
+}
+
+button {
+  cursor: pointer;
+  touch-action: manipulation;
+}
+
+:focus-visible {
+  outline: 3px solid var(--lq-cherry);
+  outline-offset: 3px;
+  border-radius: 12px;
+}
+
+/* Retro "pixel" drop shadow used on buttons/cards */
+.pixel-shadow {
+  box-shadow: 0 4px 0 0 var(--lq-rose), 0 10px 24px -8px color-mix(in srgb, var(--lq-rose) 45%, transparent);
+}
+.pixel-shadow:active {
+  box-shadow: 0 1px 0 0 var(--lq-rose);
+  transform: translateY(3px);
+}
+.soft-shadow {
+  box-shadow: 0 10px 30px -12px color-mix(in srgb, var(--lq-rose) 40%, transparent);
+}
+
+.scrollbar-none {
+  scrollbar-width: none;
+}
+.scrollbar-none::-webkit-scrollbar {
+  display: none;
+}
+
+/* ---------- keyframes ---------- */
+@keyframes lq-float-up {
+  0% { transform: translateY(0) scale(0.8); opacity: 0; }
+  10% { opacity: 0.9; }
+  100% { transform: translateY(-110dvh) scale(1.1); opacity: 0; }
+}
+@keyframes lq-fall {
+  from { transform: translateY(-80px); }
+  to { transform: translateY(var(--lq-fall-distance, 110dvh)); }
+}
+@keyframes lq-sway {
+  0%, 100% { margin-left: -10px; }
+  50% { margin-left: 10px; }
+}
+@keyframes lq-confetti {
+  0% { transform: translate3d(0, -20px, 0) rotate(0deg); opacity: 1; }
+  100% { transform: translate3d(var(--lq-dx, 0), 105dvh, 0) rotate(var(--lq-rot, 720deg)); opacity: 0.9; }
+}
+@keyframes lq-flicker {
+  0%, 100% { transform: scale(1, 1) rotate(-2deg); }
+  50% { transform: scale(0.92, 1.08) rotate(2deg); }
+}
+@keyframes lq-smoke {
+  0% { transform: translateY(0) scale(0.6); opacity: 0.7; }
+  100% { transform: translateY(-60px) scale(1.6); opacity: 0; }
+}
+@keyframes lq-bob {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-6px); }
+}
+@keyframes lq-fade-in-out {
+  0% { opacity: 0; transform: scale(0.6); }
+  15%, 80% { opacity: 1; transform: scale(1); }
+  100% { opacity: 0; transform: scale(0.9); }
+}
+
+.animate-bob { animation: lq-bob 2.4s ease-in-out infinite; }
+.animate-flicker { animation: lq-flicker 0.35s ease-in-out infinite; transform-origin: 50% 90%; }
+
+/* 3D card flip */
+.flip-scene { perspective: 800px; }
+.flip-card {
+  transform-style: preserve-3d;
+  transition: transform 0.45s cubic-bezier(0.2, 0.8, 0.3, 1.2);
+}
+.flip-card.is-flipped { transform: rotateY(180deg); }
+.flip-face {
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+}
+.flip-back { transform: rotateY(180deg); }
+
+/* Ticket notches */
+.ticket-notch {
+  --notch: 14px;
+  mask:
+    radial-gradient(circle var(--notch) at 0 50%, transparent 98%, #000) left / 51% 100% no-repeat,
+    radial-gradient(circle var(--notch) at 100% 50%, transparent 98%, #000) right / 51% 100% no-repeat;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+  }
+}
